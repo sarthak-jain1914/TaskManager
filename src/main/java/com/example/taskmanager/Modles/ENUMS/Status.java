@@ -1,4 +1,4 @@
-package com.example.taskmanager.Modles;
+package com.example.taskmanager.Modles.ENUMS;
 
 public enum Status {
     ACTIV,
