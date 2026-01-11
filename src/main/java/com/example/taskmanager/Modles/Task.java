@@ -1,5 +1,6 @@
 package com.example.taskmanager.Modles;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -18,8 +19,9 @@ public class Task extends BaseModle{
 
     private String name;
     private String description;
-    private Date timestamp;
-    private Timestamp updated;
+    private Date schedule;
+    private boolean completed;
     @ManyToOne
+    @JsonIgnore
     private User user;
 }

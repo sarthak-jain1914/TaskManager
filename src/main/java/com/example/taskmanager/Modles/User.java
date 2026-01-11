@@ -1,10 +1,9 @@
 package com.example.taskmanager.Modles;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.example.taskmanager.Modles.ENUMS.Roles;
+import com.example.taskmanager.Modles.ENUMS.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +18,9 @@ public class User extends BaseModle {
     private String password;
     private Status status;
     private Roles role;
-    @OneToMany
-    @JsonBackReference
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Task> tasks;
 
 }
